@@ -68,6 +68,10 @@ La version LTS (Long Term Support) de Symfony est la version `6.4.*`, à choisir
 
 https://endoflife.date/symfony
 
+Pour installer une version `LTS`:
+
+https://symfony.com/doc/current/setup.html#symfony-lts-versions
+
 ---
 
 Retour au [Menu](#menu)
@@ -92,25 +96,38 @@ Installation de Composer à partir du lien suivant :
 
 https://getcomposer.org/download/
 
-Choisir `PHP 8.2` ou `PHP 8.3` pour composer, mais également comme version PHP dans les variables d'environnement `Windows`
+Choisir `PHP 8.2` ou `PHP 8.3` pour composer, mais également comme version PHP dans les variables d'environnement `Windows`.
+
+Vérifions si l'environnement est correctement configuré :
+
+```bash
+symfony check:requirements
+```
 
 
 Création d'un nouveau projet Symfony (le dernier paramètre est le nom du projet) :
 
 ```bash
-symfony new --webapp projet1
+symfony new --webapp sym7projet1
+```
+
+Ou avec Composer :
+
+```bash
+composer create-project symfony/skeleton:"7.1.*" sym7projet1
+cd sym7projet1
+composer require webapp
 ```
 
 L'argument `--webapp` permet de créer un projet Symfony avec une structure de base pour une application web.
 
 **N'oubliez pas de rentrer dans le dossier du projet avant de lancer les commandes Symfony**
 
-Il est important de supprimer le dossier `.git` du projet si vous ne souhaitez pas utiliser Git pour ce projet de test.
 
-Dans notre cas, le dossier du projet est `projet1` :
+Dans notre cas, le dossier du projet est `sym7projet1` :
 
 ```bash
-cd projet1
+cd sym7projet1
 ```
 
 ---
@@ -559,3 +576,7 @@ Retour au [Menu](#menu)
 
 ---
 
+
+
+https://symfony.com/doc/current/form/form_themes.html
+https://symfony.com/bundles/ux-turbo/current/index.html

@@ -15,7 +15,6 @@
 - [Création d'une entité](#création-dune-entité)
 - [Modification de l'entité avant la migration](#modification-de-lentité-avant-la-migration)
 - [Création et exécution de la migration](#création-et-exécution-de-la-migration)
-- [Vérification des mises à jour (2024-07-24)](#vérification-des-mises-à-jour-2024-07-24)
 - [Création d'un CRUD sur notre entité `Article`](#création-dun-crud-sur-notre-entité-article)
 
 # Choix de Symfony
@@ -321,10 +320,10 @@ Pour créer une entité, on tape :
 php bin/console make:entity
 ```
 
-Note : Pour utiliser `Symfony UX Turbo` qui est proposé, on doit installer au préalable `Mercure`.
+Note : Pour utiliser un broadcast `Symfony UX Turbo` qui est proposé, on doit installer au préalable `Mercure`.
 
 
-Nous le ferons plus tard. Voici la documentation de `Symfony UX Turbo` :
+Ceci ne sera utile qu'en cas d'utilisation d'un serveur séparé, voici la documentation de `Symfony UX Turbo`, qui est une bibliothèque JavaScript pour améliorer les performances des applications Symfony (et qui est déjà installée) :
 
 https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
 
@@ -435,10 +434,9 @@ smallint
 
 Nous avons donc créé une entité `Article` avec les champs `Title`, `Text`, `CreateDate`, `UpdateDate`, `PublishedDate` et `IsPublished`.
 
-**3 fichiers ont été créés :**
+**2 fichiers ont été créés :**
 - `src/Entity/Article.php` qui est le mapping de la table `article` en base de données
 - `src/Repository/ArticleRepository.php` qui est le repository de l'entité `Article` (pour les requêtes SQL supplémentaires)
-- `templates/broadcast/Article.stream.html.twig` qui est le template pour le broadcast des entités
 
 ---
 
@@ -460,12 +458,9 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM
-// on commente la ligne suivante pour ne pas importer Symfony UX Turbo pour le moment
-// use Symfony\UX\Turbo\Attribute\Broadcast;
+
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-// on commente la ligne suivante pour ne pas utiliser Symfony UX Turbo pour le moment
-// #[Broadcast]
 class Article
 {
     #[ORM\Id]
@@ -525,45 +520,16 @@ Retour au [Menu](#menu)
 
 ---
 
-### Vérification des mises à jour (2024-07-24)
 
-Pour vérifier les mises à jour de Symfony, on tape :
-
-```bash
-composer update
-```
-
-En date du 2024-07-24, la version de Symfony passe de la `7.1.2` à `7.1.3`.
-
-Il vaut mieux faire ces mises à jour régulièrement pour éviter les failles de sécurité.
-
-Mais également vérifier que le site reste fonctionnel après chaque mise à jour !
-
-On peut voir dans la bare de débogage que la version de Symfony est bien passée à `7.1.3`.
-
-Si on va voir les logs messages (depuis la barre de débogage par exemple), on peut voir qu'une bibliothèque supplémentaire est conseillée :
-
-```bash
-composer require amphp/http-client:^4.2.1
-```
-
-Elle améliore les performances de Symfony en jouant sur l'asynchrone de PHP.
-
----
-
-Retour au [Menu](#menu)
-
----
 
 ### Création d'un CRUD sur notre entité `Article`
 
-Pour créer un CRUD (Create, Read, Update, Delete) sur notre entité `Article`, on tape :
+Pour créer un CRUD (Create, Read, Update, Delete) en version basique sur notre entité `Article`, on tape :
 
 ```bash
 php bin/console make:crud
 ```
 
-!(Création d'un CRUD)[https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/ArticleCrud.PNG]
 
 L'URL sera :
 

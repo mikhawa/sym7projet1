@@ -237,10 +237,10 @@ Les routes sont définies vers les contrôleurs depuis le fichier `config/routes
 
 ```yaml
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
 ```
 
 Pour créer un **contrôleur**, tapez :
@@ -331,7 +331,7 @@ https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
 Et on choisit dans le bash :
 
 ```bash
-micha@HP-Victus MINGW64 ~/MesDocuments/SITES/2024/SymfonyLast0724sym7projet1
+micha@HP-Victus MINGW64 ~/MesDocuments/SITES/2024/sym7projet1
 
  Class name of the entity to create or update (e.g. VictoriousKangaroo):
  > Article
@@ -512,7 +512,7 @@ php bin/console doctrine:migrations:migrate
 
 2 autres tables sont créées automatiquement par Symfony : `doctrine_migration_versions` et `messenger_messages`.
 
-Nous pouvons voir les tables créées dans la base de données `symfony_last_0724`.
+Nous pouvons voir les tables créées dans la base de données `sym7projet1`.
 
 ---
 
@@ -530,10 +530,13 @@ Pour créer un CRUD (Create, Read, Update, Delete) en version basique sur notre 
 php bin/console make:crud
 ```
 
+Ces fichiers seront créés :
+
+![Création du crud](https://raw.githubusercontent.com/mikhawa/sym7projet1/main/MyDatas/2024-08-21-100253.png)
 
 L'URL sera :
 
-https://127.0.0.1:8000/article/crud/
+https://127.0.0.1:8000/article/
 
 ---
 
@@ -541,7 +544,39 @@ Retour au [Menu](#menu)
 
 ---
 
+### Installation de `Bootstrap` et `Twig`
 
+    php bin/console importmap:require bootstrap
+
+    php bin/console importmap:require twig
+
+---
+
+Retour au [Menu](#menu)
+
+---
+
+### Donner un style à notre CRUD
+
+Pour donner un style à notre CRUD, nous allons utiliser `Bootstrap` et `Twig`.
+
+Il existe déjà des thèmes préinstallés dans Symfony, comme `Bootstrap` et `Tailwind CSS` :
+
+
+Documentation :
 
 https://symfony.com/doc/current/form/form_themes.html
+
+Dans notre cas, nous allons utiliser `Bootstrap` :
+
+Dans le fichier `config/packages/twig.yaml`, on ajoute :
+
+```yaml
+twig:
+    file_name_pattern: '*.twig'
+    form_themes: ['bootstrap_5_layout.html.twig']
+```
+
+
+https://symfony.com/doc/current/frontend/asset_mapper.html
 https://symfony.com/bundles/ux-turbo/current/index.html

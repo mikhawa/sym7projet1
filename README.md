@@ -332,8 +332,7 @@ https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
 Et on choisit dans le bash :
 
 ```bash
-micha@HP-Victus MINGW64 ~/MesDocuments/SITES/2024/SymfonyLast0724 (main)
-$ php bin/console make:entity
+micha@HP-Victus MINGW64 ~/MesDocuments/SITES/2024/SymfonyLast0724sym7projet1
 
  Class name of the entity to create or update (e.g. VictoriousKangaroo):
  > Article

@@ -289,7 +289,7 @@ Pour les variables d'environnement locales, on crée un fichier `.env.local` à 
 On va y mettre notre connexion à la base de données locale en MySQL (`root` sans mot de passe dans cet exemple) :
 
 ```bash
-DATABASE_URL="mysql://root:@localhost:3306/symfony_last_0724?serverVersion=8.2.0"
+DATABASE_URL="mysql://root:@localhost:3306/sym7projet1?serverVersion=8.2.0&charset=utf8mb4"
 ```
 
 ---

@@ -562,6 +562,24 @@ Pour donner un style à notre CRUD, nous allons utiliser `Bootstrap` et `Twig`.
 
 Il existe déjà des thèmes préinstallés dans Symfony, comme `Bootstrap` et `Tailwind CSS` :
 
+Pour importer le CSS de `Bootstrap` dans notre projet, on tape :
+
+```bash
+php bin/console importmap:require bootstrap/dist/css/bootstrap.min.css
+```
+
+Puis pour importer le css dans assets/app.js :
+
+```bash
+assets/app.js
+#
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+Puis, on compile les assets :
+
+    php bin/console asset-map:compile
+
 
 Documentation :
 

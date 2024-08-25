@@ -25,4 +25,44 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'bootstrap' => [
+        'version' => '5.3.3',
+    ],
+    '@popperjs/core' => [
+        'version' => '2.11.8',
+    ],
+    'bootstrap/dist/css/bootstrap.min.css' => [
+        'version' => '5.3.3',
+        'type' => 'css',
+    ],
+    'twig' => [
+        'version' => '1.17.1',
+    ],
+    'locutus/php/strings/sprintf' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/strings/vsprintf' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/math/round' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/math/max' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/math/min' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/strings/strip_tags' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/datetime/strtotime' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/datetime/date' => [
+        'version' => '2.0.16',
+    ],
+    'locutus/php/var/boolval' => [
+        'version' => '2.0.16',
+    ],
 ];

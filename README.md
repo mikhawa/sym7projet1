@@ -16,6 +16,10 @@
 - [Modification de l'entité avant la migration](#modification-de-lentité-avant-la-migration)
 - [Création et exécution de la migration](#création-et-exécution-de-la-migration)
 - [Création d'un CRUD sur notre entité `Article`](#création-dun-crud-sur-notre-entité-article)
+- [Installation de `Bootstrap` et `Twig`](#installation-de-bootstrap-et-twig)
+- [Donner un style à notre CRUD](#donner-un-style-à-notre-crud)
+- [Création d'un formulaire](#création-dun-formulaire)
+- 
 
 # Choix de Symfony
 
@@ -550,6 +554,9 @@ Retour au [Menu](#menu)
 
     php bin/console importmap:require twig
 
+On installe `Bootstrap` et `Twig` pour donner un style à notre CRUD.
+
+
 ---
 
 Retour au [Menu](#menu)
@@ -577,6 +584,34 @@ twig:
     form_themes: ['bootstrap_5_layout.html.twig']
 ```
 
+Dans le fichier assets/app.js, on ajoute :
+
+```javascript
+// assets/app.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+Ensuite, on compile les assets :
+
+```bash
+php bin/console assets:install
+php bin/console asset-map:compile
+```
+
 
 https://symfony.com/doc/current/frontend/asset_mapper.html
 https://symfony.com/bundles/ux-turbo/current/index.html
+
+---
+
+Retour au [Menu](#menu)
+
+---
+
+### Création d'un formulaire
+
+Pour créer un formulaire, on tape :
+
+```bash
+php bin/console make:form
+```
